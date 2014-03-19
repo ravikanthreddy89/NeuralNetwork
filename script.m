@@ -2,7 +2,11 @@ clearvars;
 fprintf('\nStarting preprocess:\n');
 [train_data, train_label, validation_data, ...
     validation_label, test_data, test_label] = preprocess();
+<<<<<<< HEAD
 fprintf('\nEnd of preprocess\n');
+=======
+fprintf('\nEnding preprocess\n');
+>>>>>>> 73ff4ee0e920609cff253fc81320fb2987e6ee39
 save('dataset.mat', 'train_data', 'train_label', 'validation_data', ...
                     'validation_label', 'test_data', 'test_label');
 load('dataset.mat');
@@ -38,9 +42,15 @@ objFunction = @(params) nnObjFunction(params, n_input, n_hidden, ...
                        n_class, train_data, train_label, lambda);
 
 % run neural network training with fmincg
+<<<<<<< HEAD
 fprintf('\nStarting training\n');
 [nn_params, cost] = fmincg(objFunction, initialWeights, options);
 fprintf('End of training:\n');
+=======
+fprintf('\nStarting trINING:\n');
+[nn_params, cost] = fmincg(objFunction, initialWeights, options);
+fprintf('\Ending training:\n');
+>>>>>>> 73ff4ee0e920609cff253fc81320fb2987e6ee39
 % reshape the nn_params from a column vector into 2 matrices w1 and w2
 w1 = reshape(nn_params(1:n_hidden * (n_input + 1)), ...
                  n_hidden, (n_input + 1));

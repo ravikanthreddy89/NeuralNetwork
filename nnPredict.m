@@ -21,18 +21,29 @@ function label = nnPredict(w1, w2, data)
 
 %you have w1, w2 and data and return the label
 %trainingSize=size(data,1);
+<<<<<<< HEAD
 label=zeros(size(data,1),1);
 for i=1:size(data,1)
+=======
+label=zeros(size(data,1),10);
+for i=1:10
+>>>>>>> 73ff4ee0e920609cff253fc81320fb2987e6ee39
     a1=[1 data(i,:)].';
     z1=w1*a1;
     a2=[1 ; sigmoid(z1)];
     z2=w2*a2;
     a3=sigmoid(z2);
     %thisLabel=zeros(10,1);
+<<<<<<< HEAD
     pIndex=find(a3>=0.5);
     %thisLabel(pIndex)=1;
     %label(i,pIndex.')=1;
     label(i,1)=sum(pIndex-1);
+=======
+    pIndex= a3>=0.5;
+    %thisLabel(pIndex)=1;
+    label(i,pIndex.')=1;
+>>>>>>> 73ff4ee0e920609cff253fc81320fb2987e6ee39
 end
 
 end

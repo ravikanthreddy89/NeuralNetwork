@@ -24,7 +24,11 @@ function [X_norm] = featureNormalize(X)
 %               each feature. 
 %
 % Hint: You might find the 'mean' and 'std' functions useful.
+<<<<<<< HEAD
 %@author : Sushilkundu
+=======
+%@author : Sushikundu
+>>>>>>> 73ff4ee0e920609cff253fc81320fb2987e6ee39
 % mu=mean(X);
 % sigma=std(X,1);
 
@@ -36,6 +40,7 @@ function [X_norm] = featureNormalize(X)
 
 % X_norm=sigma_div;   
 
+<<<<<<< HEAD
 % a = min (X(:));
  b = max (X(:));
 % ra = 0.9;
@@ -44,6 +49,15 @@ function [X_norm] = featureNormalize(X)
 % X_norm = (((ra - rb) * (X - a))/ (b -a)) + rb;
 
 X_norm=X/b;
+=======
+a = min (X(:));
+b = max (X(:));
+ra = 0.9;
+rb = 0.1;
+
+X_norm = (((ra - rb) * (X - a))/ (b -a)) + rb;
+
+>>>>>>> 73ff4ee0e920609cff253fc81320fb2987e6ee39
 % ============================================================
 
 end

@@ -69,6 +69,7 @@ for i=1:N
     
     %compute cost for this example
     hTheta=a3;
+<<<<<<< HEAD
     %dude : you are using the integer value label here too
     %positiveCost=(training_label(i,:).').*log(hTheta);
     %negativeCost=((1-training_label(i,:)).').*log(1-hTheta);
@@ -85,11 +86,24 @@ for i=1:N
     %first
     delta3=a3-output;
     %delta3=a3-training_label(i,:).';
+=======
+    positiveCost=(training_label(i,:).').*log(hTheta);
+    negativeCost=((1-training_label(i,:)).').*log(1-hTheta);
+
+    cost=cost+sum(positiveCost+negativeCost);
+    
+    %start backward propogation with deltas
+    delta3=a3-training_label(i,:).';
+>>>>>>> 73ff4ee0e920609cff253fc81320fb2987e6ee39
     delta2=(w2')*delta3.*(a2.*(1-a2));
     
     bigDelta2=bigDelta2+(delta3*(a2.'));
     bigDelta1=bigDelta1+(delta2(2:end,:)*(a1.'));
 end
+<<<<<<< HEAD
+=======
+
+>>>>>>> 73ff4ee0e920609cff253fc81320fb2987e6ee39
 m=size(training_data,1);
 w1_nonbias=[ zeros(size(w1,1),1) lambda*w1(:,2:end)];
 w2_nonbias=[ zeros(size(w2,1),1) lambda*w2(:,2:end)];
